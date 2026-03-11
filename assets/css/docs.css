@@ -1,0 +1,241 @@
+/* Scalar-docs-style layout: left nav, main content, On This Page */
+:root {
+  --docs-bg: #fff;
+  --docs-text: #1a1a1a;
+  --docs-text-muted: #6b7280;
+  --docs-border: #e5e7eb;
+  --docs-sidebar-width: 280px;
+  --docs-toc-width: 220px;
+  --docs-active: #000;
+  --docs-hover: #374151;
+}
+
+* { box-sizing: border-box; }
+
+body.docs-layout {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--docs-text);
+  background: var(--docs-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.docs-topbar {
+  height: 48px;
+  border-bottom: 1px solid var(--docs-border);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 24px;
+  flex-shrink: 0;
+  background: var(--docs-bg);
+}
+
+.docs-topbar .site-title {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--docs-text);
+  text-decoration: none;
+}
+
+.docs-topbar .site-title:hover { color: var(--docs-hover); }
+
+.docs-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.docs-tabs a {
+  padding: 6px 12px;
+  font-size: 14px;
+  color: var(--docs-text-muted);
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.docs-tabs a:hover { color: var(--docs-text); }
+
+.docs-tabs a.active {
+  color: var(--docs-active);
+  font-weight: 500;
+  background: #f3f4f6;
+}
+
+.docs-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.docs-sidebar {
+  width: var(--docs-sidebar-width);
+  flex-shrink: 0;
+  border-right: 1px solid var(--docs-border);
+  padding: 24px 0;
+  overflow-y: auto;
+  background: var(--docs-bg);
+}
+
+.docs-sidebar .nav-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--docs-text-muted);
+  padding: 0 24px 12px;
+}
+
+.docs-sidebar .search-placeholder {
+  margin: 0 16px 16px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--docs-text-muted);
+  background: #f9fafb;
+  border: 1px solid var(--docs-border);
+  border-radius: 6px;
+}
+
+.docs-sidebar nav a {
+  display: block;
+  padding: 8px 24px;
+  font-size: 14px;
+  color: var(--docs-text);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+
+.docs-sidebar nav a:hover { color: var(--docs-hover); }
+
+.docs-sidebar nav a.active {
+  font-weight: 500;
+  color: var(--docs-active);
+  border-left-color: var(--docs-active);
+  background: #fafafa;
+}
+
+.docs-sidebar nav .nav-section {
+  display: block;
+  padding: 12px 24px 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--docs-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.docs-main {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  padding: 32px 48px 48px;
+}
+
+.docs-main h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: var(--docs-text);
+}
+
+.docs-main .lead {
+  font-size: 1rem;
+  color: var(--docs-text-muted);
+  margin: 0 0 2rem;
+}
+
+.docs-main .content {
+  max-width: 720px;
+}
+
+.docs-main .content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 2rem 0 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--docs-border);
+}
+
+.docs-main .content h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+
+.docs-main .content h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; }
+
+.docs-main .content p { margin: 0 0 1rem; }
+
+.docs-main .content a { color: #2563eb; }
+
+.docs-main .content a:hover { text-decoration: underline; }
+
+.docs-toc {
+  width: var(--docs-toc-width);
+  flex-shrink: 0;
+  border-left: 1px solid var(--docs-border);
+  padding: 24px 0 24px 24px;
+  overflow-y: auto;
+}
+
+.docs-toc .toc-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--docs-text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.docs-toc nav a {
+  display: block;
+  font-size: 13px;
+  color: var(--docs-text-muted);
+  text-decoration: none;
+  padding: 4px 0;
+  line-height: 1.4;
+}
+
+.docs-toc nav a:hover { color: var(--docs-text); }
+
+.docs-toc nav a.active { color: var(--docs-active); font-weight: 500; }
+
+/* API page: Scalar gets full width so its own left nav + content can show */
+.docs-body-api .docs-sidebar {
+  display: none;
+}
+
+.docs-body-api .docs-toc {
+  display: none;
+}
+
+.docs-body-api .docs-main {
+  flex: 1;
+  min-width: 100%;
+}
+
+.docs-main.scalar-embed {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 48px);
+  min-height: 600px;
+}
+
+.docs-main.scalar-embed #scalar-app {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .docs-toc { display: none; }
+}
+
+@media (max-width: 768px) {
+  .docs-sidebar { display: none; }
+  .docs-main { padding: 24px 20px; }
+}

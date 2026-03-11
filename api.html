@@ -1,0 +1,17 @@
+---
+layout: docs
+title: API Reference
+embed_scalar: true
+---
+
+<script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
+<script>
+  (function () {
+    var url = {{ site.api_spec_url | jsonify }};
+    var proxyUrl = {{ site.proxy_url | jsonify }};
+    Scalar.createApiReference('#scalar-app', {
+      url: url,
+      proxyUrl: proxyUrl || undefined
+    });
+  })();
+</script>

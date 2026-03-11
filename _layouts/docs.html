@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/docs.css' | relative_url }}" />
+</head>
+<body class="docs-layout">
+  <header class="docs-topbar">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="docs-tabs">
+      <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">Guide</a>
+      <a href="{{ '/api.html' | relative_url }}" class="{% if page.url == '/api.html' %}active{% endif %}">API Reference</a>
+    </nav>
+  </header>
+
+  <div class="docs-body {% if page.embed_scalar %}docs-body-api{% endif %}">
+    <aside class="docs-sidebar">
+      <div class="nav-label">Guide</div>
+      <div class="search-placeholder" aria-hidden="true">⌘ Find anything</div>
+      <nav>
+        {% for item in site.nav %}
+          {% if item.children %}
+            <span class="nav-section">{{ item.label }}</span>
+            {% for child in item.children %}
+              <a href="{{ child.url | relative_url }}" class="{% if page.url == child.url or child.url == '/' and page.url == '/index.html' %}active{% endif %}">{{ child.label }}</a>
+            {% endfor %}
+          {% else %}
+            <a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.label }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+    </aside>
+
+    <main class="docs-main {% if page.embed_scalar %}scalar-embed{% endif %}">
+      {% if page.embed_scalar %}
+        <div id="scalar-app"></div>
+        {{ content }}
+      {% else %}
+        <h1>{{ page.title }}</h1>
+        {% if page.lead %}
+          <p class="lead">{{ page.lead }}</p>
+        {% endif %}
+        <div class="content">
+          {{ content }}
+        </div>
+      {% endif %}
+    </main>
+
+    <aside class="docs-toc">
+      <div class="toc-title">On This Page</div>
+      <nav id="on-this-page">
+        {% if page.embed_scalar %}
+          <a href="#api" class="active">API Reference</a>
+        {% else %}
+          <div data-toc-root></div>
+        {% endif %}
+      </nav>
+    </aside>
+  </div>
+
+  {% unless page.embed_scalar %}
+  <script>
+    (function() {
+      var root = document.querySelector('[data-toc-root]');
+      if (!root) return;
+      var main = document.querySelector('.docs-main .content');
+      if (!main) return;
+      var headings = main.querySelectorAll('h2, h3');
+      headings.forEach(function(h, i) {
+        var id = h.id || ('section-' + i);
+        if (!h.id) h.id = id;
+        var a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = h.textContent;
+        a.className = h.tagName === 'H2' ? '' : 'toc-h3';
+        if (a.className === 'toc-h3') a.style.paddingLeft = '12px';
+        root.appendChild(a);
+      });
+      if (headings.length === 0) {
+        var fallback = document.createElement('a');
+        fallback.href = '#';
+        fallback.textContent = document.querySelector('.docs-main h1').textContent;
+        fallback.className = 'active';
+        root.appendChild(fallback);
+      }
+    })();
+  </script>
+  {% endunless %}
+</body>
+</html>

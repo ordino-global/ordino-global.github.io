@@ -1,0 +1,17 @@
+# GitHub Pages & Jekyll configuration
+title: Ordino Global
+description: Ordino Global — API and documentation
+theme: jekyll-theme-cayman
+
+# Optional: set your OpenAPI spec URL here (JSON or YAML).
+api_spec_url: "https://registry.scalar.com/@ordino/apis/commonpark-api@latest"
+proxy_url: "https://proxy.scalar.com"
+
+# Docs-style nav (left sidebar)
+nav:
+  - label: Getting Started
+    children:
+      - label: Common Park Platform
+        url: /
+  - label: API Reference
+    url: /api.html
