@@ -11,7 +11,37 @@ embed_scalar: true
     var proxyUrl = {{ site.proxy_url | jsonify }};
     Scalar.createApiReference('#scalar-app', {
       url: url,
-      proxyUrl: proxyUrl || undefined
+      proxyUrl: proxyUrl || undefined,
+      authentication: {
+        securitySchemes: {
+          ApiKey: {
+            value: "SECRET_API_KEY",
+          },
+
+          Basic: {
+            username: "test_guest_001@example.com",
+            password: "unused-password!",
+          }
+        }
+      },
+      servers: [
+        {
+          url: "https://{park_id}.dev.ordino.global",
+          description: "Development sandboxes",
+          variables: {
+            park_id: {
+              default: "sb1-test-park",
+              description: "The ID of the park to use for the request.",
+              enum: [
+                "sb1-test-park"
+              ]
+            }
+          }
+        }
+      ],
+      showOperationId: true,
+      operationTitleSource: "path",
+      orderSchemaPropertiesBy: "preserve"
     });
   })();
 </script>

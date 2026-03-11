@@ -10,26 +10,42 @@
   <header class="docs-topbar">
     <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <nav class="docs-tabs">
-      <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">Guide</a>
-      <a href="{{ '/api.html' | relative_url }}" class="{% if page.url == '/api.html' %}active{% endif %}">API Reference</a>
+      {% for item in site.top_nav %}
+        <a href="{{ item.url | relative_url }}" class="{% if page.url == item.url or item.url == '/' and page.url == '/index.html' %}active{% endif %}">{{ item.label }}</a>
+      {% endfor %}
     </nav>
   </header>
 
   <div class="docs-body {% if page.embed_scalar %}docs-body-api{% endif %}">
     <aside class="docs-sidebar">
-      <div class="nav-label">Guide</div>
+      <div class="nav-label">{% if page.url contains '/errors' %}Error Reference{% else %}Guide{% endif %}</div>
       <div class="search-placeholder" aria-hidden="true">⌘ Find anything</div>
       <nav>
-        {% for item in site.nav %}
-          {% if item.children %}
-            <span class="nav-section">{{ item.label }}</span>
-            {% for child in item.children %}
-              <a href="{{ child.url | relative_url }}" class="{% if page.url == child.url or child.url == '/' and page.url == '/index.html' %}active{% endif %}">{{ child.label }}</a>
+        {% if page.url contains '/errors' %}
+          {% assign error_pages = site.pages | where_exp: "p", "p.path contains 'errors/'" | where_exp: "p", "p.name != 'index.md'" | sort: "path" %}
+          {% for section in site.errors_sidebar %}
+            <span class="nav-section">{{ section.label }}</span>
+            {% for item in section.items %}
+              {% assign item_file = item | append: '.md' %}
+              {% for p in error_pages %}
+                {% if p.name == item_file %}
+                  <a href="{{ p.url | relative_url }}" class="{% if page.url == p.url %}active{% endif %}">{{ p.title }}</a>
+                {% endif %}
+              {% endfor %}
             {% endfor %}
-          {% else %}
-            <a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.label }}</a>
-          {% endif %}
-        {% endfor %}
+          {% endfor %}
+        {% else %}
+          {% for item in site.side_nav %}
+            {% if item.children %}
+              <span class="nav-section">{{ item.label }}</span>
+              {% for child in item.children %}
+                <a href="{{ child.url | relative_url }}" class="{% if page.url == child.url or child.url == '/' and page.url == '/index.html' %}active{% endif %}">{{ child.label }}</a>
+              {% endfor %}
+            {% else %}
+              <a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.label }}</a>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
       </nav>
     </aside>
 

@@ -1,17 +1,50 @@
 # GitHub Pages & Jekyll configuration
-title: Ordino Global
-description: Ordino Global — API and documentation
+title: Common Park Platform
+description: Ordino Common Park Platform — API and documentation
 theme: jekyll-theme-cayman
 
 # Optional: set your OpenAPI spec URL here (JSON or YAML).
 api_spec_url: "https://registry.scalar.com/@ordino/apis/commonpark-api@latest"
 proxy_url: "https://proxy.scalar.com"
 
-# Docs-style nav (left sidebar)
-nav:
+# Top bar navigation (tabs)
+top_nav:
+  - label: Guide
+    url: /
+  - label: API Reference
+    url: /api.html
+  - label: API Problem Details
+    url: /errors/
+
+# Left sidebar navigation (sections and links)
+side_nav:
   - label: Getting Started
     children:
       - label: Common Park Platform
         url: /
   - label: API Reference
     url: /api.html
+
+# Error reference sidebar: sections and error basenames (filename without .md)
+errors_sidebar:
+  - label: Authentication
+    items:
+      - authentication_not_enabled
+      - invalid_api_key_header
+      - invalid_authorization_header
+      - invalid_credentials
+      - multiple_authentication_schemes
+      - unauthorized
+  - label: Other
+    items:
+      - insufficient_permissions
+      - not_configured
+      - not_found
+      - operation_failed
+      - processing_error
+      - invalid_payload
+      - invalid_signature
+      - resource_not_found
+      - session_creation_failed
+      - unknown_error
+      - validation_error
