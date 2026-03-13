@@ -12,7 +12,7 @@ Documentation for each error response returned by the CommonPark API. All error 
 - **`success`**: `false` for all error responses
 - **`status`**: HTTP status code
 - **`error_code`**: Machine-readable code (used in `type` URI as `.../errors/{error_code}`)
-- **`type`**: URI reference for the problem type, e.g. `http://commonpark-platform.dev.ordino.global/errors/{error_code}`
+- **`type`**: URI reference for the problem type, e.g. `https://commonpark-platform.dev.ordino.global/errors/{error_code}`
 - **`title`**: Short human-readable summary
 - **`detail`**: Explanation specific to this occurrence
 - **`trace_id`**: Request trace identifier (when available)

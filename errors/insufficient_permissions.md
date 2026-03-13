@@ -33,12 +33,10 @@ Standard error fields plus:
   "success": false,
   "status": 403,
   "error_code": "insufficient_permissions",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/insufficient_permissions",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/insufficient_permissions",
   "title": "Insufficient permissions",
   "detail": "The request requires a role that you do not possess and was unable to be completed due to insufficient permissions.",
-  "extensions": {
-    "allowed_roles": ["Admin"]
-  }
+  "allowed_roles": ["Admin"]
 }
 ```
 

@@ -29,7 +29,7 @@ Standard error fields only.
   "success": false,
   "status": 400,
   "error_code": "invalid_payload",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/invalid_payload",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/invalid_payload",
   "title": "Bad request",
   "detail": "The request was unable to be completed due to a problem with the request."
 }

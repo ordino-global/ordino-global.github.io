@@ -39,7 +39,7 @@ Standard error fields plus:
   "success": false,
   "status": 404,
   "error_code": "not_found",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/not_found",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/not_found",
   "title": "The specified resource was not found",
   "detail": "The resource at `reservation/abc123` was not found.",
   "path": "reservation/abc123"

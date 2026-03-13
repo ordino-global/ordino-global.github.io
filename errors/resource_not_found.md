@@ -26,8 +26,8 @@ Standard error fields plus:
 
 | Field | Location | Description |
 |-------|----------|-------------|
-| `extensions.resource_type` | Optional | Type of resource that was missing (e.g. `session`, `package`, `queue`). |
-| `extensions.missing_resources` | Optional | List of IDs or keys that were not found. |
+| `resource_type` | Optional | Type of resource that was missing (e.g. `session`, `package`, `queue`). |
+| `missing_resources` | Optional | List of IDs or keys that were not found. |
 | `request_data` | Optional | The request payload that referenced the missing resources. |
 
 ## Example
@@ -37,13 +37,11 @@ Standard error fields plus:
   "success": false,
   "status": 400,
   "error_code": "resource_not_found",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/resource_not_found",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/resource_not_found",
   "title": "One or more required resources could not be found",
   "detail": "Could not find the following resource of type `queue`: queue-123.",
-  "extensions": {
-    "resource_type": "queue",
-    "missing_resources": ["queue-123"]
-  }
+  "resource_type": "queue",
+  "missing_resources": ["queue-123"]
 }
 ```
 

@@ -24,7 +24,7 @@ Standard error fields plus:
 
 | Field | Location | Description |
 |-------|----------|-------------|
-| `extensions.authentication_scheme` | Optional | e.g. `ApiKey`. |
+| `authentication_scheme` | Optional | e.g. `ApiKey`. |
 
 ## Example
 
@@ -33,12 +33,10 @@ Standard error fields plus:
   "success": false,
   "status": 401,
   "error_code": "invalid_api_key_header",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/invalid_api_key_header",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/invalid_api_key_header",
   "title": "The API key header is invalid.",
   "detail": "The API key header should be in the format 'x-api-key: <api_key>'.",
-  "extensions": {
-    "authentication_scheme": "ApiKey"
-  }
+  "authentication_scheme": "ApiKey"
 }
 ```
 

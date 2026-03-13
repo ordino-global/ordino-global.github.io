@@ -28,7 +28,7 @@ Standard error fields only. No extra extension fields.
   "success": false,
   "status": 400,
   "error_code": "operation_failed",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/operation_failed",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/operation_failed",
   "title": "The operation failed",
   "detail": "The operation failed due to an unknown error."
 }

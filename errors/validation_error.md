@@ -24,7 +24,7 @@ Standard error fields plus:
 
 | Field | Location | Description |
 |-------|----------|-------------|
-| `extensions.errors` | Optional | Object mapping field names to arrays of error messages. |
+| `errors` | Optional | Object mapping field names to arrays of error messages. |
 
 ## Example
 
@@ -33,14 +33,12 @@ Standard error fields plus:
   "success": false,
   "status": 400,
   "error_code": "validation_error",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/validation_error",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/validation_error",
   "title": "One or more validation errors occurred",
   "detail": "The request was unable to be completed due to a problem with the request.",
-  "extensions": {
-    "errors": {
-      "Email": ["The Email field is required."],
-      "Packages": ["At least one package is required."]
-    }
+  "errors": {
+    "Email": ["The Email field is required."],
+    "Packages": ["At least one package is required."]
   }
 }
 ```
@@ -48,4 +46,4 @@ Standard error fields plus:
 ## How to fix
 
 - Ensure the request body and query parameters match the API schema.
-- Correct the fields listed under `extensions.errors` and retry.
+- Correct the fields listed under `errors` and retry.

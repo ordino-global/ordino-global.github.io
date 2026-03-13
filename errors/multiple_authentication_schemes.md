@@ -24,7 +24,7 @@ Standard error fields plus:
 
 | Field | Location | Description |
 |-------|----------|-------------|
-| `extensions.authentication_scheme` | Optional | The scheme that caused the conflict. |
+| `authentication_scheme` | Optional | The scheme that caused the conflict. |
 
 ## Example
 
@@ -33,12 +33,10 @@ Standard error fields plus:
   "success": false,
   "status": 401,
   "error_code": "multiple_authentication_schemes",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/multiple_authentication_schemes",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/multiple_authentication_schemes",
   "title": "Multiple authentication schemes were specified in the request.",
   "detail": "Only one authentication scheme can be used at a time.  Use either the Authorization header or the x-api-key header, but not both.",
-  "extensions": {
-    "authentication_scheme": "ApiKey"
-  }
+  "authentication_scheme": "ApiKey"
 }
 ```
 

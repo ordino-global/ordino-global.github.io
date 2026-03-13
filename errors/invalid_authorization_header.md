@@ -24,7 +24,7 @@ Standard error fields plus:
 
 | Field | Location | Description |
 |-------|----------|-------------|
-| `extensions.authentication_scheme` | Optional | The scheme that was used (e.g. `Basic`, `GoogleJwt`). |
+| `authentication_scheme` | Optional | The scheme that was used (e.g. `Basic`, `GoogleJwt`). |
 
 ## Example
 
@@ -33,11 +33,9 @@ Standard error fields plus:
   "success": false,
   "status": 401,
   "error_code": "invalid_authorization_header",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/invalid_authorization_header",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/invalid_authorization_header",
   "title": "The authorization header is invalid.",
-  "extensions": {
-    "authentication_scheme": "Basic"
-  }
+  "authentication_scheme": "Basic"
 }
 ```
 

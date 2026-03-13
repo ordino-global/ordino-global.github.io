@@ -3,6 +3,15 @@ title: Common Park Platform
 description: Ordino Common Park Platform — API and documentation
 theme: jekyll-theme-cayman
 
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+include: [".well-known", ".well-known/openid-configuration"]
+
 # Optional: set your OpenAPI spec URL here (JSON or YAML).
 api_spec_url: "https://registry.scalar.com/@ordino/apis/commonpark-api@latest"
 proxy_url: "https://proxy.scalar.com"
@@ -22,6 +31,12 @@ side_nav:
     children:
       - label: Common Park Platform
         url: /
+      - label: Authentication
+        url: /authentication
+      - label: User Interactions
+        url: /user-interactions
+      - label: E-commerce integration
+        url: /ecommerce-integration
   - label: API Reference
     url: /api.html
 
@@ -38,13 +53,8 @@ errors_sidebar:
   - label: Other
     items:
       - insufficient_permissions
-      - not_configured
       - not_found
       - operation_failed
-      - processing_error
-      - invalid_payload
-      - invalid_signature
       - resource_not_found
-      - session_creation_failed
       - unknown_error
       - validation_error

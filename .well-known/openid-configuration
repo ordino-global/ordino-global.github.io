@@ -1,0 +1,4 @@
+{
+  "issuer":"https://commonpark-platform.dev.ordino.global",
+  "jwks_uri":"https://commonpark-platform.dev.ordino.global/.well-known/jwks.json"
+}

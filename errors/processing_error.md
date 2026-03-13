@@ -29,7 +29,7 @@ Standard error fields only.
   "success": false,
   "status": 500,
   "error_code": "processing_error",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/processing_error",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/processing_error",
   "title": "Bad request",
   "detail": "The request was unable to be completed due to a problem with the request."
 }

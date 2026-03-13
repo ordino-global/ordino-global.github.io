@@ -34,12 +34,10 @@ Standard error fields plus:
   "success": false,
   "status": 401,
   "error_code": "unauthorized",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/unauthorized",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/unauthorized",
   "title": "The specifies resource requires authentication.",
   "detail": "Include a valid Bearer token in the Authorization header of the request to authenticate.",
-  "extensions": {
-    "allowed_roles": ["User"]
-  }
+  "allowed_roles": ["User"]
 }
 ```
 

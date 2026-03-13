@@ -25,7 +25,7 @@ Standard error fields plus:
 
 | Field | Location | Description |
 |-------|----------|-------------|
-| `extensions.authentication_scheme` | Optional | The scheme that is not enabled (e.g. `Basic`, `ApiKey`, `GoogleJwt`). |
+| `authentication_scheme` | Optional | The scheme that is not enabled (e.g. `Basic`, `ApiKey`, `GoogleJwt`). |
 
 ## Example
 
@@ -34,7 +34,7 @@ Standard error fields plus:
   "success": false,
   "status": 401,
   "error_code": "authentication_not_enabled",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/authentication_not_enabled",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/authentication_not_enabled",
   "title": "The attempted authentication scheme is not enabled.",
   "detail": "ApiKey authentication must be enabled in the park settings.",
   "authentication_scheme": "ApiKey"

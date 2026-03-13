@@ -29,7 +29,7 @@ Standard error fields only.
   "success": false,
   "status": 501,
   "error_code": "not_configured",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/not_configured",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/not_configured",
   "title": "Bad request",
   "detail": "The request was unable to be completed due to a problem with the request."
 }

@@ -25,7 +25,7 @@ Standard error fields plus:
 
 | Field | Location | Description |
 |-------|----------|-------------|
-| `extensions.authentication_scheme` | Optional | The scheme used (e.g. `ApiKey`, `GoogleJwt`). |
+| `authentication_scheme` | Optional | The scheme used (e.g. `ApiKey`, `GoogleJwt`). |
 
 ## Example
 
@@ -34,12 +34,10 @@ Standard error fields plus:
   "success": false,
   "status": 401,
   "error_code": "invalid_credentials",
-  "type": "http://commonpark-platform.dev.ordino.global/errors/invalid_credentials",
+  "type": "https://commonpark-platform.dev.ordino.global/errors/invalid_credentials",
   "title": "The specified credentials are not valid.",
   "detail": "The credentials provided are not valid.  Please check the credentials and try again.  If the problem persists, please contact support.",
-  "extensions": {
-    "authentication_scheme": "ApiKey"
-  }
+  "authentication_scheme": "ApiKey"
 }
 ```
 
