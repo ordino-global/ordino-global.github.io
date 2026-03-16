@@ -3,6 +3,10 @@ layout: docs
 title: E-commerce integration
 ---
 
+## API Reference
+
+* [/api/orders](https://commonpark-platform.dev.ordino.global/api.html#tag/ecommerce/POST/api/orders)
+
 ## Overview
 
 This guide describes how to send order data from your e-commerce or payment system to Ordino using the **`/api/orders`** endpoint. When a guest completes a purchase in your store, your backend calls this API with the order details. Ordino creates the corresponding entitlements for that guest. Those entitlements then appear in the guest’s account and can be used for the [Reserve flow](user-interactions.md) (reservations, redemptions, etc.).

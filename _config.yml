@@ -8,12 +8,12 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
-      line_numbers: false
+      line_numbers: true
 
 include: [".well-known", ".well-known/openid-configuration"]
 
 # Optional: set your OpenAPI spec URL here (JSON or YAML).
-api_spec_url: "https://registry.scalar.com/@ordino/apis/commonpark-api@current"
+api_spec_url: "https://registry.scalar.com/@ordino/apis/commonpark-api@0.2.0"
 proxy_url: "https://proxy.scalar.com"
 
 # Top bar navigation (tabs)

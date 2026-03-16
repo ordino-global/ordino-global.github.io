@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" width="280" height="200">
+  <rect width="280" height="200" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+  <rect x="110" y="36" width="60" height="48" rx="4" fill="none" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 2"/>
+  <text x="140" y="66" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#adb5bd">...</text>
+  <text x="140" y="112" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#212529">No reservations yet</text>
+  <text x="140" y="134" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#495057">Reserve a time for an attraction</text>
+  <text x="140" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#495057">to see it here.</text>
+  <rect x="90" y="168" width="100" height="32" rx="6" fill="#0d6efd" stroke="#0d6efd"/>
+  <text x="140" y="188" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#fff">Browse attractions</text>
+</svg>
