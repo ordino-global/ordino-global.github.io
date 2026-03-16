@@ -13,7 +13,7 @@ kramdown:
 include: [".well-known", ".well-known/openid-configuration"]
 
 # Optional: set your OpenAPI spec URL here (JSON or YAML).
-api_spec_url: "https://registry.scalar.com/@ordino/apis/commonpark-api@latest"
+api_spec_url: "https://registry.scalar.com/@ordino/apis/commonpark-api@current"
 proxy_url: "https://proxy.scalar.com"
 
 # Top bar navigation (tabs)
