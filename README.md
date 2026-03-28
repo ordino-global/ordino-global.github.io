@@ -24,3 +24,13 @@ proxy_url: "https://proxy.scalar.com"
 ## Theme
 
 The site uses the [Cayman](https://github.com/pages-themes/cayman) Jekyll theme. To switch themes, change the `theme` value in `_config.yml` to another [supported theme](https://pages.github.com/themes/) (e.g. `jekyll-theme-minimal`, `jekyll-theme-slate`).
+
+## Dev Container
+
+This repo includes a `.devcontainer` so you can build and validate locally in an isolated environment.
+
+After opening in the container:
+
+- Serve locally: `bundle exec jekyll serve --host 0.0.0.0 --livereload`
+- Build site: `bundle exec jekyll build`
+- Strict build check ("test"): `bundle exec jekyll build --trace --strict_front_matter`
