@@ -70,6 +70,10 @@ Optionally, highlight remaining entitlements that satisfy unmet requirements so 
 
 ## React Example
 
+The following example shows a possible implementation of the above specification using ReactJS.
+
+The example interacts directly with a real API, so in order to make use of it, you need to create an appropriate order to work with using the `/api/orders` API.
+
 Edit the React code on the left and see the live output on the right.
 
 <script src="/assets/js/js-playground.js" data-root-id="playground-root" data-code-url="react-example.js" data-preview-css-url="react-example.css" data-frame-title="Entitlement Picker Playground Preview" data-collapse-on-load="true"></script>

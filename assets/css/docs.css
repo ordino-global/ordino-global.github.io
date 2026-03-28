@@ -148,7 +148,8 @@ body.docs-layout {
 }
 
 .docs-main .content {
-  max-width: 720px;
+  width: 100%;
+  max-width: none;
 }
 
 .docs-main .content h2 {
