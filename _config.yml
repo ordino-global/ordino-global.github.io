@@ -37,6 +37,10 @@ side_nav:
         url: /user-interactions
       - label: E-commerce integration
         url: /ecommerce-integration
+  - label: Examples
+    children:
+      - label: Entitlement Picker
+        url: /examples/entitlement-picker
   - label: API Reference
     url: /api.html
 
