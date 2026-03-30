@@ -227,6 +227,9 @@ function Example() {
       const api = new Api(baseUrl, username);
       await api.reserve(queueId, reservationType, entitlementKeys);
       setReserveStatus("Queue reserved successfully.");
+      setSelectedEntitlements([]);
+      setReservationType(null);
+      await loadEntitlements();
     } catch (error) {
       console.error(error);
       setReserveStatus("Reserve failed. Please try again.");
